@@ -39,6 +39,7 @@ Route::post('/estudiante/{codigo}/actualizar','backend\EstudianteController@actu
 Route::get('/beneficiario','backend\BeneficiarioController@index')->middleware('ident');
 Route::match(['get','post'],'/beneficiario/registrar','backend\BeneficiarioController@registrar')->middleware('ident');
 Route::post('/beneficiario/eliminar','backend\BeneficiarioController@eliminar')->middleware('ident');
+Route::post('/beneficiario/{id_beneficiario}/actualizar','backend\BeneficiarioController@actualizar')->middleware('ident');
 
 
 

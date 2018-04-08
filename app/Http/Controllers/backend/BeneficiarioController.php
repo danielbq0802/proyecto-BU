@@ -157,4 +157,15 @@ class BeneficiarioController extends Controller
         }
 
     }
+    public function actualizar(Request $request,$id_beneficiario){
+        $beneficiario=Beneficiario::find($id_beneficiario);
+        if($beneficiario){
+            $beneficiario->tipo=$request->tipo;
+            $beneficiario->observacion=$request->observacion;
+            $beneficiario->save();
+            return response()->json(["mensaje"=>" Beneficiario Actualizado correctamente !!","parametro"=>"edicion"]);
+        }else{
+            abort(422);
+        }
+    }
 }
